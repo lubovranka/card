@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --input-active: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+    --input-error: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(270, 3%, 87%);
+    --dark-gray: hsl(279, 6%, 55%);
+    --dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}

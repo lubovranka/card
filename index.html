@@ -1,31 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- META INFO -->
     <title>Card Form</title>
-    <meta name="author" content="Ľubomír Vranka">
-    <meta name="description" content="A simple card form porfolio project">
-    <meta name="keywords" content="HTML, SCSS, jQuery">
-    <link rel="canonical" href="card.lubo.dev">
+    <meta name="author" content="Ľubomír Vranka" />
+    <meta name="description" content="A simple card form porfolio project" />
+    <meta name="keywords" content="HTML, SCSS, jQuery" />
+    <link rel="canonical" href="https://card.lubo.dev" />
 
     <!-- STYLES & SCRIPTS -->
-    <link rel="stylesheet" href="styles/index.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" 
-            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" 
-            crossorigin="anonymous" defer>
-    </script>
+    <link rel="stylesheet" href="styles/index.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" 
+        crossorigin="anonymous" 
+        defer></script>
     <script src="./scripts/index.js" defer></script>
 
     <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Hello world</h1>
+    <div class="background"></div>
+    <div class="container">
+        <main>
+            <div class="card-front">
+                <div class="card-deco">
+                    <div class="large-circle"></div>
+                    <div class="small-circle"></div>
+                </div>
+                <div>
+                    <p class="number-display" id="number-display">
+                        0000 0000 0000 0000
+                    </p>
+                </div>
+                <div class="card-front-info">
+                    <p class="name-display" id="name-display">Jane Appleseed</p>
+                    <p class="expiration-display">
+                        <span id="month-display">00</span>/<span id="year-display">00</span>
+                    </p>
+                </div>
+            </div>
+            <div class="card-back">
+                <p class="cvc-display" id="cvc-display">000</p>
+            </div>
+        </main>
+        <form action="#">
+            <label for="name-input">Cardholder name</label>
+                <input 
+                    type="text" 
+                    name="card_name" 
+                    id="name-input" 
+                    placeholder="e.g. Jane Appleseed"
+                    pattern="^(\D*)(\s)(\D*)$" 
+                    aria-label="Cardholder name input" 
+                    required />
+            <label for="number-input">Card number</label>
+                <input 
+                    type="text" 
+                    name="card_number" 
+                    id="number-input" 
+                    placeholder="e.g. 1234 5678 9123 0000"
+                    pattern="^(\d{4}\s){3}(\d{4})" 
+                    aria-label="Card number input" 
+                    required />
+            <div class="form-divider">
+                <div class="divider-child">
+                    <p class="label">Exp. date</p>
+                    <div class="date-input-container">
+                        <div class="month-container">
+                            <input 
+                                type="number" 
+                                name="card_month" 
+                                id="month-input" 
+                                placeholder="MM" 
+                                min="1" 
+                                max="12"
+                                aria-label="Card expiration month input" 
+                                required />
+                        </div>
+                        <div class="year-container">
+                            <input 
+                                type="number" 
+                                name="card_year" 
+                                id="year-input" 
+                                placeholder="YY"
+                                aria-label="Card expiration year input" 
+                                required />
+                        </div>
+                    </div>
+                </div>
+                <div class="divider-child">
+                    <label for="cvc-input">CVC</label>
+                        <input 
+                            type="number" 
+                            name="card_cvc" 
+                            id="cvc-input" 
+                            placeholder="e.g. 123"
+                            aria-label="Card CVC input" 
+                            required />
+                </div>
+            </div>
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
 </body>
 </html>

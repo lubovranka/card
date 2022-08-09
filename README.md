@@ -13,7 +13,7 @@
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### The challenge
 

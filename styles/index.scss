@@ -175,6 +175,15 @@ button {
     margin-top: 0.5em;
 }
 
+footer {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.links > a:not(:last-of-type) {
+    margin-right: 1em;
+}
+
 @media screen and (min-width: 1024px){
     .container {
         flex-direction: row;
@@ -329,4 +338,17 @@ button {
         letter-spacing: 2px;
     }
 }
+
+a {
+    text-decoration: none;
+}
+
+.portfolio {
+    padding: 0.5em 1em;
+    border: 2px solid #000000;
+    color:#000000;
+    border-radius: 8px;
+    margin-left: 0.5em;
+}
+
   /*# sourceMappingURL=index.css.map */
